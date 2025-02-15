@@ -1,0 +1,21 @@
+{
+  "name": "mega-right-click",
+  "version": "1.0.0",
+  "description": "Extremely basic utility for downloading all the images in original quality from an EVM crypto wallet.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "right-click": "node index.js --env-file .env"
+  },
+  "author": "Thorne Melcher",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "ethers": "^6.13.5",
+    "image-downloader": "^4.3.0"
+  },
+  "bin": {
+    "right-click": "./cli.js"
+  }
+}
