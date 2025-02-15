@@ -1,3 +1,7 @@
+/**
+ * Functions used by mega right click
+ */
+
 import * as dotenv from "dotenv"
 dotenv.config()
 
@@ -10,6 +14,12 @@ const chains = ["ethereum", "base", "optimism", "matic", "arbitrum", "zora"]
 const OPENSEA_API_KEY = process.env.OPENSEA_API_KEY
 const WALLET_ADDRESS = process.env.WALLET_ADDRESS
 
+/**
+ * Pulls all NFTs from the specified wallet on all chains
+ * 
+ * @param {string} wallet The wallet address to pull NFTs from
+ * @param {string} apiKey The OpenSea API key to use
+ */
 export async function pullAllChains(wallet = WALLET_ADDRESS, apiKey = OPENSEA_API_KEY) {
     if(!wallet || wallet.trim() === "") {
         return
@@ -29,7 +39,14 @@ export async function pullAllChains(wallet = WALLET_ADDRESS, apiKey = OPENSEA_AP
     }
 }
 
-async function pullNFTImagesFromChain(chain, wallet = WALLET_ADDRESS, apiKey = OPENSEA_API_KEY) {
+/**
+ * Pulls all NFTs from the specified wallet on the specified chain
+ * 
+ * @param {string} chain The chain to pull NFTs from
+ * @param {string} wallet The wallet address to pull NFTs from
+ * @param {string} apiKey The OpenSea API key to use
+ */
+export async function pullNFTImagesFromChain(chain, wallet = WALLET_ADDRESS, apiKey = OPENSEA_API_KEY) {
     // Ensure the output directory exists
     if(!fs.existsSync(`${process.cwd()}/images`)) {
         fs.mkdirSync(`${process.cwd()}/images`)
@@ -74,5 +91,3 @@ async function pullNFTImagesFromChain(chain, wallet = WALLET_ADDRESS, apiKey = O
         
     }
 }
-
-pullAllChains()
