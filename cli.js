@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 
+/**
+ * This file is where the command line hooks in.
+ */
+
 import { pullAllChains } from "./index.js"
 import { ethers } from "ethers"
 

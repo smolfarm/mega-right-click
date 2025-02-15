@@ -1,6 +1,6 @@
 # mega right click
 
-**Extremely** basic CLI utility for downloading all the images in original quality from an EVM crypto wallet using the OpenSea API.
+**Extremely** basic Node CLI utility for downloading all the images in original quality from an EVM crypto wallet using the OpenSea API. Downloads everything to `/images` in the current working directory.
 
 After installing mega right click, call it using `right-click`:
 
